@@ -1,5 +1,5 @@
 import React from 'react';
-import Footer from '../Footer/Footer';
+// import Footer from '../Footer/Footer';
 import Services from '../OurServices/Services';
 import Banner from './Banner';
 import DisplayProducts from './DisplayProducts';
@@ -19,7 +19,7 @@ const Home = () => {
             <div className='px-12'>
                 <Reviews></Reviews>
             </div>
-            <Footer></Footer>
+          
         </div>
     );
 };

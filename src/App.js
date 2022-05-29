@@ -9,6 +9,7 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import Reviews from './Pages/Home/Reviews';
 import ContactUs from './Pages/Home/ContactUs';
 import PurchaseProductPage from './Pages/Home/PurchaseProductPage';
+import Footer from './Pages/Footer/Footer';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
       </Routes>
+      <Footer></Footer>
 
     </div>
   );
