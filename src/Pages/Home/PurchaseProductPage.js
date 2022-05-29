@@ -15,6 +15,34 @@ const PurchaseProductPage = () => {
             .then(data => setProductDetail(data))
 
     }, []);
+
+    const handleOrder = event => {
+        event.preventDefault();
+        const productName = productDetail.name;
+        const unitPrice = productDetail.price;
+        const quantity = event.target.quantity.value;
+        const phone = event.target.phone.value;
+        const address = event.target.address.value;
+        const userName = event.target.username.value;
+        const userEmail = event.target.userEmail.value;
+        console.log(quantity, address, phone, userName, userEmail);
+        const orderDetails = { productName, unitPrice, quantity, phone, address, userName, userEmail };
+        console.log(orderDetails);
+        const url = `http://localhost:5000/order`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orderDetails)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                alert('Product Added Successfully');
+            });
+
+    }
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row">
@@ -24,13 +52,13 @@ const PurchaseProductPage = () => {
                     <p className="py-1">{productDetail.des}</p>
                     <h3 className=" text-primary-focus text-2xl">Unit Price: $ {productDetail.price}</h3>
                     <div className='px-24'>
-                        <form  >
+                        <form onSubmit={handleOrder}>
                             {/* //////////////// Quantity  //////////////// */}
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Quantity</span>
                                 </label>
-                                <input type="number" placeholder="Type here quantity" className="input input-bordered input-primary w-full max-w-xs" />
+                                <input type="number" name='quantity' placeholder="Type here quantity" className="input input-bordered input-primary w-full max-w-xs" />
                                 <label className="label">
                                     <span className="label-text-alt">  { }  </span>
                                 </label>
@@ -40,23 +68,23 @@ const PurchaseProductPage = () => {
                                 <label className="label">
                                     <span className="label-text">Phone</span>
                                 </label>
-                                <input type="number" placeholder="Type here phone" className="input input-bordered input-primary w-full max-w-xs " />
+                                <input type="number" name='phone' placeholder="Type here phone" className="input input-bordered input-primary w-full max-w-xs " />
                             </div>
                             {/* ////////////////  address //////////////// */}
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Address</span>
                                 </label>
-                                <textarea className="textarea textarea-primary" placeholder="Your address"></textarea>
+                                <textarea className="textarea textarea-primary" name='address' placeholder="Your address"></textarea>
                             </div>
                             {/* //////////////// name  //////////////// */}
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
                                     <span className="label-text">Name</span>
                                 </label>
-                                <input type="text" disabled value={user?.displayName || ''} placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
+                                <input type="text" name='username' disabled value={user?.displayName || ''} placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
                                 <label className="label">
-                                    <span className="label-text-alt"> { } </span>
+
                                 </label>
                             </div>
                             {/* //////////////// email  //////////////// */}
@@ -64,9 +92,9 @@ const PurchaseProductPage = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="text" disabled value={user?.email || ''} placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
+                                <input type="text" name='userEmail' disabled value={user?.email || ''} placeholder="Type here" className="input input-bordered input-primary w-full max-w-xs" />
                                 <label className="label">
-                                    <span className="label-text-alt">{ }</span>
+
                                 </label>
                             </div>
                             {/* ////////////////  submit  //////////////// */}
