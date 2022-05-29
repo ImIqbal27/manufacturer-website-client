@@ -17,6 +17,33 @@ const MyOrders = () => {
     return (
         <div>
             <h2>My Orders: {orders.length}</h2>
+            <div class="overflow-x-auto">
+                <table class="table w-full">
+
+                    <thead>
+                        <tr>
+                            <th>Sl</th>
+                            <th>Name</th>
+                            <th>Product</th>
+                            <th>Unit Price</th>
+                            <th>Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            orders.map((order, index) =>
+                                <tr key={order._id}>
+                                    <th>{index + 1}</th>
+                                    <td>{order.userName}</td>
+                                    <td>{order.productName}</td>
+                                    <td>{order.unitPrice}</td>
+                                    <td>{order.quantity}</td>
+                                </tr>)
+
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
