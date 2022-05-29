@@ -39,7 +39,6 @@ const MyOrders = () => {
                                     <td>{order.unitPrice}</td>
                                     <td>{order.quantity}</td>
                                 </tr>)
-
                         }
                     </tbody>
                 </table>
