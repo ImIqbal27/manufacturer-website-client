@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Gigabyte AORUS GeForce RTX 3080 MASTER 12GB GDDR6X Graphics Card",
+        "image": "https://www.startech.com.bd/image/cache/catalog/graphics-card/gigabyte/aorus-geforce-rtx-3080-master-12g/aorus-geforce-rtx-3080-master-12g-01-500x500.jpg",
+        "des": "Core clock: 1830 MHz (Reference Card: 1710 MHz) , Memory Clock 19000 MHz , Output: DP 1.4a x3, HDMI 2.1 x2, HDMI 2.0 x1",
+        "price": "187,000",
+        "min order qun": " ",
+        "available": " "
+    },
+    {
+        "name": "PCcooler Halo FX-120 Dynamic Color 120mm Case Fan",
+        "image": "https://www.startech.com.bd/image/cache/catalog/casing-cooler/pccooler/halo-fx-120/pccooler-halo-fx-120-fan-03-500x500.jpg",
+        "des": "Maximum Speed: 1400RPM,Max. Air Flow: 45.18CFM,Noise Level: 8~26.5dB(A)",
+        "price": "299",
+        "min order qun": " ",
+        "available": " "
+    },
+    {
+        "name": "G.Skill Trident Z5 RGB 16GB DDR5 6000MHz CL36 Desktop RAM Silver",
+        "image": "https://www.startech.com.bd/image/cache/catalog/ram/gskill/z5-rgb-16gb-ddr5/trident-z5-rgb-01-500x500.jpg",
+        "des": "Capacity: 16GB, Memory Type: DDR5 ,Tested Latency: 36-36-36-76 , Tested Speed: 6000MHz",
+        "price": "21,000",
+        "min order qun": " ",
+        "available": " "
+    },
+    {
+        "name": "Toshiba S300 Pro 6TB 7200rpm 3.5 Surveillance Hard Drive ",
+        "image": "https://www.startech.com.bd/image/cache/catalog/hdd/toshiba/s300-pro/s300-pro-01-500x500.jpg",
+        "des": "Rotational speed: 7,200 rpm , Data transfer speed: 241 MB/s Typ, Buffer size: 256 MB",
+        "price": "14400",
+        "min order qun": " ",
+        "available": " "
+    },
+    {
+        "name": "AOC E970SWHEN 18.5 HDMI LED Monitor",
+        "image": " https://www.startech.com.bd/image/cache/catalog/monitor/aoc/e970swhen/e970Swhen-main-500x500.jpg",
+        "des": "18.5 inch LED Monitor, Ultra high dynamic contrast, Smart, energy efficient",
+        "price": "10000",
+        "min order qun": " ",
+        "available": " "
+    },
+    {
+        "name": "Deepcool GAMMA ARCHER CPU Air Cooler",
+        "image": "https://www.startech.com.bd/image/cache/catalog/cpu-cooler/deepcool/gamma-archer/gamma-archer-01-500x500.jpg",
+        "des": "Long lifespan & excellent cooling performance , High quality aluminum extrusions, Fan Speed: 1600Â±10%RPM",
+        "price": "799",
+        "min order qun": " ",
+        "available": " "
+    }
+]

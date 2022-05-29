@@ -32,7 +32,7 @@ const Login = () => {
 
     }
     if (user || gUser) {
-        navigate('/')
+        navigate(from, { replace: true });
     }
     const onSubmit = data => {
         console.log("email & pass", data);
@@ -119,3 +119,5 @@ const Login = () => {
 };
 
 export default Login;
+
+
