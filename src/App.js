@@ -8,6 +8,7 @@ import SignUp from './Pages/Login/SignUp';
 import RequireAuth from './Pages/Login/RequireAuth';
 import Reviews from './Pages/Home/Reviews';
 import ContactUs from './Pages/Home/ContactUs';
+import PurchaseProductPage from './Pages/Home/PurchaseProductPage';
 
 function App() {
   return (
@@ -22,6 +23,11 @@ function App() {
             <Reviews></Reviews>
           </RequireAuth>}>
         </Route>
+        <Route path='purchase/:productId' element={
+          <RequireAuth>
+            <PurchaseProductPage></PurchaseProductPage>
+          </RequireAuth>
+        }></Route>
         <Route path='login' element={<Login></Login>}></Route>
         <Route path='signup' element={<SignUp></SignUp>}></Route>
       </Routes>
