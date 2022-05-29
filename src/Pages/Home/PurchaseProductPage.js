@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const PurchaseProductPage = () => {
@@ -39,7 +40,7 @@ const PurchaseProductPage = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                alert('Product Added Successfully');
+                toast.success('Order placed successfully !');
             });
 
     }
@@ -102,6 +103,7 @@ const PurchaseProductPage = () => {
                             <input type="submit" className="btn btn-primary" value='Confirm' />
 
                         </form>
+
                     </div>
                 </div>
             </div>
