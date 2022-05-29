@@ -7,25 +7,25 @@ const Services = () => {
         {
             id: 1,
             name: 'Trucking Service',
-            des: 'Transport begun providing transportation solutions to transport contract warehousing customer in the 1980s and expanded over time to include dedicated ',
+            des: 'Transport begun providing transportation solutions to transport',
             img: 'https://www.pngitem.com/pimgs/m/10-108338_truck-icon-png-delivery-truck-icon-png-transparent.png'
         },
         {
             id: 2,
             name: 'Shipping Delivery',
-            des: 'Transport begun providing transportation solutions to transport contract warehousing customer in the 1980s and expanded over time to include dedicated ',
+            des: 'Transport begun providing transportation solutions to transport',
             img: 'https://cdn3.iconfinder.com/data/icons/shipping-delivery-2/24/Ship-512.png'
         },
         {
             id: 3,
             name: 'Paking and Store ',
-            des: 'Transport begun providing transportation solutions to transport contract warehousing customer in the 1980s and expanded over time to include dedicated ',
+            des: 'Transport begun providing transportation solutions to transport ',
             img: 'https://static.thenounproject.com/png/1825079-200.png'
         },
         {
             id: 4,
             name: 'Air Transport International',
-            des: 'Transport begun providing transportation solutions to transport contract warehousing customer in the 1980s and expanded over time to include dedicated ',
+            des: 'Transport begun providing transportation solutions to transport ',
             img: 'http://cdn.onlinewebfonts.com/svg/img_10714.png'
         },
     ]
