@@ -11,22 +11,22 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?userEmail=${user.email}`, {
+            fetch(`https://shrouded-lake-70100.herokuapp.com/order?userEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
 
             })
-            .then(res => {
-                console.log('ressss', res);
-                if (res.status === 401 || res.status === 403) {
-                    signOut(auth);
-                    localStorage.removeItem('accessToken');
-                    navigate('/');
-                }
-                return res.json()
-            })
+                .then(res => {
+                    console.log('ressss', res);
+                    if (res.status === 401 || res.status === 403) {
+                        signOut(auth);
+                        localStorage.removeItem('accessToken');
+                        navigate('/');
+                    }
+                    return res.json()
+                })
                 .then(data => setOrders(data))
         }
 

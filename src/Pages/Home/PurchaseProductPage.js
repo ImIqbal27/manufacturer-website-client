@@ -10,7 +10,7 @@ const PurchaseProductPage = () => {
     const [user, loading, error] = useAuthState(auth);
 
     useEffect(() => {
-        const url = `http://localhost:5000/product/${productId}`;
+        const url = `https://shrouded-lake-70100.herokuapp.com/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProductDetail(data))
@@ -29,7 +29,7 @@ const PurchaseProductPage = () => {
         console.log(quantity, address, phone, userName, userEmail);
         const orderDetails = { productName, unitPrice, quantity, phone, address, userName, userEmail };
         console.log(orderDetails);
-        const url = `http://localhost:5000/order`;
+        const url = `https://shrouded-lake-70100.herokuapp.com/order`;
         fetch(url, {
             method: 'POST',
             headers: {
