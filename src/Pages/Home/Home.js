@@ -1,9 +1,9 @@
 import React from 'react';
-// import Footer from '../Footer/Footer';
 import Services from '../OurServices/Services';
 import Banner from './Banner';
 import DisplayProducts from './DisplayProducts';
 import Reviews from './Reviews';
+import BusinessSummary from './BusinessSummary';
 
 const Home = () => {
     return (
@@ -17,9 +17,10 @@ const Home = () => {
                 <Services></Services>
             </div>
             <div className='px-12'>
+                <BusinessSummary></BusinessSummary>
                 <Reviews></Reviews>
             </div>
-          
+
         </div>
     );
 };

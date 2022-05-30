@@ -9,24 +9,24 @@ const Reviews = () => {
     const reviews = [
         {
             _id: 1,
-            name: 'Wilson Herry',
+            name: 'Robert Downey Jr',
             comment: 'Quick Delivery and good quality...they are awesome. Weren`t let in for no reason even after queuing again',
-            location: 'Dhaka',
-            img: people1
+            location: 'Rajshahi',
+            img: 'https://www.ed92.org/wp-content/uploads/2021/12/Robert-Downey-Jr.-780x585.jpg'
         },
         {
             _id: 2,
-            name: 'Wilson Herry',
+            name: 'Chris Hemsworth',
             comment: 'We had an issue with an appliance which took a lot of resolving with the suppliers.We are so of the hard work ,her to go the extra mile for us!',
             location: 'Chattogram',
-            img: people2
+            img: 'https://tvline.com/wp-content/uploads/2020/08/chris-hemsworth.jpg?w=620'
         },
         {
             _id: 3,
-            name: 'Wilson Herry',
+            name: 'Mark Ruffalo',
             comment: 'Good prompt service .This company such a gem so helpful.Excellent choice of binding machines and binders',
-            location: 'Coxsbazar',
-            img: people3
+            location: 'Magura',
+            img: 'https://image.tmdb.org/t/p/w200/z3dvKqMNDQWk3QLxzumloQVR0pv.jpg'
         },
     ]
     return (
@@ -34,9 +34,9 @@ const Reviews = () => {
             <div className='flex justify-between'>
                 <div className='items-center'>
                     <h4 className="text-xl text-primary font-bold">
-                        
+
                     </h4>
-                    <h2 className="text-3xl">What Our Patients Say</h2>
+                    <h2 className="text-3xl">What Our Clients Say</h2>
                 </div>
                 <div>
                     <img src={quote} className='lg:w-48 w-24' alt="" />
