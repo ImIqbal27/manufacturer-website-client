@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const PurchaseProductPage = () => {
+
     const { productId } = useParams();
     const [productDetail, setProductDetail] = useState({});
     const [user, loading, error] = useAuthState(auth);
@@ -21,7 +22,11 @@ const PurchaseProductPage = () => {
         event.preventDefault();
         const productName = productDetail.name;
         const unitPrice = productDetail.price;
+        const min_order_qun = parseInt(productDetail.min_order_qun);
+        const available = parseInt(productDetail.available);
+
         const quantity = event.target.quantity.value;
+        console.log('qqqqqqqqq', typeof (quantity));
         const phone = event.target.phone.value;
         const address = event.target.address.value;
         const userName = event.target.username.value;
@@ -29,25 +34,45 @@ const PurchaseProductPage = () => {
         console.log(quantity, address, phone, userName, userEmail);
         const orderDetails = { productName, unitPrice, quantity, phone, address, userName, userEmail };
         console.log(orderDetails);
-        const url = `https://shrouded-lake-70100.herokuapp.com/order`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(orderDetails)
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-                toast.success('Order placed successfully !');
-            });
+
+
+        if (quantity >= min_order_qun && quantity <= available) {
+
+            const url = `https://shrouded-lake-70100.herokuapp.com/order`;
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(orderDetails)
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result);
+                    toast.success('Order placed successfully !');
+
+                });
+
+
+        }
+        else {
+
+            if (quantity < min_order_qun) {
+                toast.error(`Minimum Order is ${min_order_qun}`)
+
+            }
+            if (quantity > available) {
+                toast.error(`Available Quantity is ${available}`)
+
+            }
+        }
+
 
     }
     return (
         <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row">
-                <img src={productDetail.image} className="max-w-sm rounded-lg shadow-2xl" />
+                <img src={productDetail.image} className="max-w-sm rounded-lg shadow-2xl  transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover: duration-300" />
                 <div>
                     <h1 className="text-2xl text-primary-focus font-bold">{productDetail.name}</h1>
                     <p className="py-1">{productDetail.des}</p>
@@ -57,11 +82,12 @@ const PurchaseProductPage = () => {
                             {/* //////////////// Quantity  //////////////// */}
                             <div className="form-control w-full max-w-xs">
                                 <label className="label">
-                                    <span className="label-text">Quantity</span>
+                                    <span className="label-text">Quantity </span>
                                 </label>
                                 <input type="number" name='quantity' placeholder="Type here quantity" className="input input-bordered input-primary w-full max-w-xs" />
                                 <label className="label">
-                                    <span className="label-text-alt">  { }  </span>
+                                    <span className="label-text-alt text-red-400">Minimum Order {productDetail.min_order_qun} pcs  </span>
+                                    <span className="label-text-alt text-green-400">Available {productDetail.available} pcs  </span>
                                 </label>
                             </div>
                             {/* ////////////////  phone //////////////// */}
@@ -97,10 +123,10 @@ const PurchaseProductPage = () => {
                                 <label className="label">
 
                                 </label>
+                                <input type="submit" className="btn btn-primary" value='Confirm' />
                             </div>
                             {/* ////////////////  submit  //////////////// */}
 
-                            <input type="submit" className="btn btn-primary" value='Confirm' />
 
                         </form>
 

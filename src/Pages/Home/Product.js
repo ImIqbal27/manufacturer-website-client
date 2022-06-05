@@ -10,7 +10,7 @@ const Product = ({ product }) => {
     }
     return (
         <div className="card lg:max-w-lg bg-base-100 shadow-xl text-center">
-            <figure><img src={image} alt="product" /></figure>
+            <figure><img src={image} alt="product" className='transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover: duration-300 ' /></figure>
             <div className="card-body">
                 <h2 className="card-title">
                     {name}
@@ -23,7 +23,7 @@ const Product = ({ product }) => {
                     <div className="badge badge-outline">Tools</div>
                     <button
                         onClick={() => navigateToPurchasePage(_id)}
-                        className="btn btn-primary">Buy Now</button>
+                        className="btn btn-primary transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover: duration-300">Buy Now</button>
                 </div>
             </div>
         </div>

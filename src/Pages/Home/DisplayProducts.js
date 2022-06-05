@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Product from './Product';
+import PurchaseProductPage from './PurchaseProductPage';
 
 const DisplayProducts = () => {
     const [products, setProducts] = useState([]);
@@ -10,7 +11,7 @@ const DisplayProducts = () => {
     }, [])
     return (
         <div>
-            <h3 className='text-xl text-secondary text-center'> Products </h3>
+            <h3 className='text-2xl text-secondary text-center'>Our Products </h3>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5' >
                 {
                     products.map(product => <Product key={product._id}

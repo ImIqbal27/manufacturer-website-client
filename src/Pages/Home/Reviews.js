@@ -1,8 +1,5 @@
 import React from 'react';
 import quote from '../../image/quote.svg';
-import people1 from '../../image/people1.png';
-import people2 from '../../image/people2.png';
-import people3 from '../../image/people3.png';
 import Review from './Review';
 
 const Reviews = () => {

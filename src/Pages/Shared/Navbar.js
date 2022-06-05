@@ -18,14 +18,17 @@ const Navbar = () => {
         }
         <li><Link to='/reviews'>Reviews</Link></li>
         <li><Link to='/contact'>Contact</Link></li>
-        <li><Link to='/about'>About Us</Link></li>
+        <li><Link to='/blogs'>Blogs</Link></li>
+        {/* <li><Link to='/about'>AboutUs</Link></li> */}
+        <li><Link to='/portfolio'>Portfolio</Link></li>
 
-        <li>{user ? <button onClick={logout} className="btn btn-ghost">Sign Out</button> : <Link to='/login'>Login</Link>}</li>
+        <li>{user ? <button onClick={logout} className="btn btn-ghost font-bold">Sign Out</button> : <Link to='/login'>Login</Link>}</li>
 
     </>
 
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-primary-focus">
+            {/* <div className="navbar bg-base-100"> */}
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabindex="0" className="btn btn-ghost lg:hidden">
@@ -35,10 +38,10 @@ const Navbar = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-3xl">Hardware-Point</a>
+                <Link to='/' className="btn btn-ghost normal-case text-3xl text-white">Hardware-Point</Link>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal p-0 text-white font-bold">
                     {menuItems}
                 </ul>
             </div>
