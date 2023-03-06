@@ -11,7 +11,8 @@ const MyOrders = () => {
     const navigate = useNavigate();
     useEffect(() => {
         if (user) {
-            fetch(`https://shrouded-lake-70100.herokuapp.com/order?userEmail=${user.email}`, {
+            // fetch(`https://shrouded-lake-70100.herokuapp.com/order?userEmail=${user.email}`, {
+            fetch(`https://manufacturer-website-server-updated.vercel.app/order?userEmail=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`

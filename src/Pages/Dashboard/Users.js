@@ -4,7 +4,9 @@ import Loading from '../Shared/Loading';
 import UserRow from './UserRow';
 
 const Users = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://shrouded-lake-70100.herokuapp.com/user', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => 
+    // fetch('https://shrouded-lake-70100.herokuapp.com/user', {
+    fetch('https://manufacturer-website-server-updated.vercel.app/user', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

@@ -7,7 +7,8 @@ const useAdmin = user => {
     useEffect(() => {
         const email = user?.email;
         if (email) {
-            fetch(`https://shrouded-lake-70100.herokuapp.com/admin/${email}`, {
+            // fetch(`https://shrouded-lake-70100.herokuapp.com/admin/${email}`, {
+            fetch(`https://manufacturer-website-server-updated.vercel.app/admin/${email}`, {
                 method: 'GET',
                 headers: {
                     'content-type': 'application/json',

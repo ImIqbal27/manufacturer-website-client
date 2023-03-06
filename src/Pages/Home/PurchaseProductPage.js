@@ -11,7 +11,8 @@ const PurchaseProductPage = () => {
     const [user, loading, error] = useAuthState(auth);
 
     useEffect(() => {
-        const url = `https://shrouded-lake-70100.herokuapp.com/product/${productId}`;
+        // const url = `https://shrouded-lake-70100.herokuapp.com/product/${productId}`;
+        const url = `https://manufacturer-website-server-updated.vercel.app/product/${productId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setProductDetail(data))
@@ -38,7 +39,8 @@ const PurchaseProductPage = () => {
 
         if (quantity >= min_order_qun && quantity <= available) {
 
-            const url = `https://shrouded-lake-70100.herokuapp.com/order`;
+            // const url = `https://shrouded-lake-70100.herokuapp.com/order`;
+            const url = `https://manufacturer-website-server-tau.vercel.app/order`;
             fetch(url, {
                 method: 'POST',
                 headers: {

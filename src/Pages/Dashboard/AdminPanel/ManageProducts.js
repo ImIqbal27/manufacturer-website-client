@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react';
 const ManageProducts = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch(`https://shrouded-lake-70100.herokuapp.com/product`)
+        // fetch(`https://shrouded-lake-70100.herokuapp.com/product`)
+        fetch(`https://manufacturer-website-server-updated.vercel.app/product`)
             .then(res => res.json())
             .then(data => setProducts(data))
     }, [])
